@@ -64,8 +64,7 @@ public final class ItemGeneratorHack extends Hack implements UpdateListener
 	{
 		if(!MC.player.hasInfiniteMaterials())
 		{
-			ChatUtils.error("Creative mode only.");
-			setEnabled(false);
+			
 		}
 		
 		int stacks = speed.getValueI();
@@ -80,10 +79,11 @@ public final class ItemGeneratorHack extends Hack implements UpdateListener
 			Item item = optional.get().value();
 			ItemStack stack = new ItemStack(item, stackSize.getValueI());
 			
-			InventoryUtils.setCreativeStack(slot, stack);
+			InventoryUtils.setStack(slot, stack);
 		}
 		
 		for(int i = 9; i < 9 + stacks; i++)
 			IMC.getInteractionManager().windowClick_THROW(i);
 	}
 }
+
