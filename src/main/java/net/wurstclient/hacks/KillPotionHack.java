@@ -48,9 +48,7 @@ public final class KillPotionHack extends Hack
 		// check gamemode
 		if(!MC.player.getAbilities().instabuild)
 		{
-			ChatUtils.error("Creative mode only.");
-			setEnabled(false);
-			return;
+	
 		}
 		
 		// generate potion
@@ -63,7 +61,7 @@ public final class KillPotionHack extends Hack
 			ChatUtils.error("Cannot give potion. Your inventory is full.");
 		else
 		{
-			InventoryUtils.setCreativeStack(slot, stack);
+			InventoryUtils.setStack(slot, stack);
 			ChatUtils.message("Potion created.");
 		}
 		
@@ -118,3 +116,4 @@ public final class KillPotionHack extends Hack
 		}
 	}
 }
+
